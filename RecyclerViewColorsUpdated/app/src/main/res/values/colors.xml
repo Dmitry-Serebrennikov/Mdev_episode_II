@@ -8,5 +8,6 @@
     <color name="custom_black">#FF000000</color>
     <color name="custom_blue">#1B32C8</color>
     <color name="custom_white">#FFFFFFFF</color>
-    <color name="text_color">#FFFF0000</color>
+    <color name="text_color">#FFB800</color>
+    <color name="text_shadow_color">#FFFF0000</color>
 </resources>
