@@ -7,43 +7,29 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
+
     <TextView
         android:id="@+id/count"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:text="Count of results" />
+        android:lineSpacingExtra="8sp"
+        android:text="Count of results"
+        android:textSize="14sp" />
 
-    <LinearLayout
-        android:id="@+id/linear"
-        android:layout_width="218dp"
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/count"
-        android:orientation="horizontal">
-
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5" />
-
-        <TextView
-            android:id="@+id/selection"
-            android:layout_width="62dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5" />
-    </LinearLayout>
-
+        android:layout_below="@+id/count" />
     <ListView
         android:id="@+id/imageList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/request"
-        android:layout_below="@+id/linear"
+        android:layout_below="@+id/spinner"
         android:layout_marginBottom="12dp"
         >
-
-
     </ListView>
 
     <EditText

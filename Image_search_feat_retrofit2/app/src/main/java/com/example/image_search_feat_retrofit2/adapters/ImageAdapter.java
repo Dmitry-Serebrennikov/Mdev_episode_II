@@ -48,15 +48,13 @@ public class ImageAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // используем созданные, но не используемые view
         View view = convertView;
         if (view == null) {
             view = lInflater.inflate(R.layout.item, parent, false);
         }
 
         Hit hit = (Hit) getItem(position);
-        // заполняем View в пункте списка данными из товаров: наименование, цена
-        // и картинка
+
         ((TextView) view.findViewById(R.id.item_id)).setText(hit.getTags());
         View finalView = view;
         ((ImageView) finalView.findViewById(R.id.item_image)).setImageDrawable(drawables.get(position));

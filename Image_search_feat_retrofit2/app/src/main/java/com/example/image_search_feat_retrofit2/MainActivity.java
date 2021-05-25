@@ -29,8 +29,7 @@ public class MainActivity extends AppCompatActivity {
     String[] imageTypes = {"all", "photo", "vector", "illustrator"};
     EditText request;
     TextView count;
-    TextView selection;
-    String vibor;
+    String selection;
     Button search;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,23 +46,19 @@ public class MainActivity extends AppCompatActivity {
         AdapterView.OnItemSelectedListener itemSelectedListener = new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // Получаем выбранный объект
                 String type_item = (String)parent.getItemAtPosition(position);
-                //selection.setText(type_item);//(type_item);
-                vibor = type_item;
+                selection = type_item;
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                String type_item = (String)parent.getItemAtPosition(1);
-                selection.setText(type_item);
-                vibor = imageTypes[0];
+                selection = imageTypes[0];
             }
         };
         spinner.setOnItemSelectedListener(itemSelectedListener);
         search = findViewById(R.id.search);
         search.setOnClickListener(v -> {
-            CustomApp.getPixabayAPI().getDataByTypeQuery(CustomApp.KEY, request.getText().toString(),selection.toString()) //vibor)//vibor.toString()/*selection.toString(), значение из спиннера*/)
+            CustomApp.getPixabayAPI().getDataByTypeQuery(CustomApp.KEY, request.getText().toString(), selection)
                     .enqueue(new Callback<Result>() {
 
                 @Override
