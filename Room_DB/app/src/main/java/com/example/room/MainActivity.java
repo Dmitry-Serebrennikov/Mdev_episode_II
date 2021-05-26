@@ -48,18 +48,17 @@ public class MainActivity extends AppCompatActivity {
             db.manager().delete(catProd);
         }
         for(int i = 0; i<3; i++){
-            Category category = new Category(i, "Cat"+i);
+            Category category = new Category(i, "Catagory " + i);
             db.manager().insert(category);
         }
         for(int i = 0; i<10;i++){
-            Product product = new Product(i,"Prod"+i,"Auth"+i, i*10);
+            Product product = new Product(i,"Product " + i,"Auth"+i, i*10);
             db.manager().insert(product);
         }
         for(int i = 0; i<10;i++) {
             CategoryProduct cp = new CategoryProduct(i,i, i%3);
             db.manager().insert(cp);
         }
-        
     }
 
     public void setCursorInUIThread(List<Product> productList, List<Category> categoryList) {
