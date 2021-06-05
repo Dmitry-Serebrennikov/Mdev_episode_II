@@ -24,10 +24,6 @@ public class Result {
         this.title = title;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
     public void setDate(Date date) {
         this.date = date;
     }

@@ -21,7 +21,9 @@ import com.example.nasa_picture_day.adapters.ItemListAdapter;
 import com.example.nasa_picture_day.data.Item;
 
 import java.io.ByteArrayOutputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import retrofit2.Call;
@@ -53,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
                         @Override
                         public void onResponse(Call<Result> call, Response<Result> response) {
-                            // count.setText("total of " + response.body().getTotalHits() + " images were found on your request: " + "«" + request.getText() + "»");
                             new downloadImageTask().execute(response.body());
                         }
 
@@ -66,7 +67,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String getDate() {
-        return picker.getYear() + "-" + (picker.getMonth() < 10 ? "0" : "") + picker.getMonth() + "-" + picker.getDayOfMonth();
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(picker.getYear(), picker.getMonth(), picker.getDayOfMonth());
+        String date = new SimpleDateFormat("yyyy-MM-dd").format(calendar.getTime());
+        return date;
+        //бралась дата + время GMT + день недели, убрал в угоду минимализма// return picker.getYear() + "-" + (picker.getMonth() + 1 < 10 ? "0" : "") + (picker.getMonth() + 1)  + "-" + picker.getDayOfMonth();
     }
 
     private class downloadImageTask extends AsyncTask<Result, Void, Drawable> {
@@ -84,10 +89,9 @@ public class MainActivity extends AppCompatActivity {
                 Bitmap bmp = ((BitmapDrawable) drawable).getBitmap();
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
                 bmp.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-                Item item = new Item(result.getDate().toString(), result.getTitle(),
+                Item item = new Item(getDate(), result.getTitle(),
                         result.getUrl(), stream.toByteArray());
                 long insert = CustomApp.getDB().itemDao().insert(item);
-                //this.items = CustomApp.getDB().itemDao().getAll();
 
 
             } catch (Exception e) {
@@ -98,7 +102,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         protected void onPostExecute(Drawable drawable) {
-            //TODO: safetyCast
             ItemListAdapter adapter = new ItemListAdapter();
             recyclerView.setAdapter(adapter);
             CustomApp.getDB().itemDao().getAll().observe(MainActivity.this, items -> adapter.submitList(items));

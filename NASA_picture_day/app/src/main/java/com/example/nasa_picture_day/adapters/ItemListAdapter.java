@@ -21,13 +21,9 @@ import java.util.List;
 
 public class ItemListAdapter extends androidx.recyclerview.widget.ListAdapter<Item, ItemListAdapter.ViewHolder>{
 
-//    private final LayoutInflater inflater;
-//    private List<Item> items;
 
     public ItemListAdapter() {
         super(new ItemDiffUtil());
-  /*      this.items = items == null ? new ArrayList<>() : items;
-        inflater = LayoutInflater.from(context);*/
     }
 
     @NonNull
@@ -47,31 +43,20 @@ public class ItemListAdapter extends androidx.recyclerview.widget.ListAdapter<It
 
         private final TextView title;
         private final ImageView image;
-/*        private final TextView date; // date
-        private final ImageView picture;*/
+        private final TextView date;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.title);
             image = itemView.findViewById(R.id.image);
-/*            date = itemView.findViewById(R.id.date);
-            picture = itemView.findViewById(R.id.picture);*/
+            date = itemView.findViewById(R.id.date);
         }
 
         public void bind(Item item) {
             title.setText(item.getTitle());
+            date.setText(item.getDate());
             image.setImageBitmap(BitmapFactory.decodeByteArray(item.getImage(), 0, item.getImage().length));
-
-/*
-            picture.post(() ->
-                    Picasso.get()
-                            .load(item.getImageRef())
-                            .resize(picture.getMeasuredWidth(), picture.getMeasuredHeight())
-                            .centerCrop()
-                            .error(R.drawable.no_image)
-                            .into(picture));
-*/
-
         }
     }
 

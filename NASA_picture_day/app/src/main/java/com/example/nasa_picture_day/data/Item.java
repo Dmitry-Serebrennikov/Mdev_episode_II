@@ -24,19 +24,6 @@ public class Item {
     byte[] image;
 
 
-/*
-
-
-    @ColumnInfo(name = "description")
-    private String description;
-
-    @ColumnInfo(name = "date")
-    private Date date;
-
-    @ColumnInfo(name = "image_ref")
-    private String imageRef;
-*/
-
     public Item(String date, String title, String url, byte[] image) {
         this.date = date;
         this.title = title;
