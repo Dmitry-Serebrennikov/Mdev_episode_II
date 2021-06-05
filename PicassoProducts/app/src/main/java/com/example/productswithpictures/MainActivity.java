@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                                     new Item("Лехина колесница", "Авто", 55555555,"Available", 20000, "https://wroom.ru/i/cars2/lada_2101_1.jpg"),
                                     new Item("Проездной", "Прикладник style", 77777777,"Available", 600, "https://irkobl.ru/itcio/images/%D0%B8%D1%80%D0%BA%D1%83%D1%82%D1%81%D0%BA.png"),
                                     new Item("Прикладной рюкзак", "Прикладник style", 88888888,"Available", 3500, "https://image.freepik.com/free-photo/vintage-backpack_172251-329.jpg"),
-                                    new Item("Сделать наконец домашку", "Услуга", 99999999,"unavailable", 0, "https://picsum.photos/id/1/1000"));
+                                    new Item("Сделать наконец домашку", "Труд", 99999999,"unavailable", 0, "https://picsum.photos/id/1/1000"));
                         });
                     }
                 })
