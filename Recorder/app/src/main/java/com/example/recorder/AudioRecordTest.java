@@ -39,84 +39,6 @@ public class AudioRecordTest extends AppCompatActivity {
     private boolean permissionToWriteAccepted = false;
     private String[] permissions = {Manifest.permission.RECORD_AUDIO, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
-/*
-
-    //TODO: посмотреть пермишены
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case REQUEST_RECORD_AUDIO_PERMISSION:
-                permissionToRecordAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
-                break;
-            case WRITE_EXTERNAL_STORAGE_PERMISSION:
-                permissionToWriteAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
-                break;
-        }
-        isPermissionChecking = false;
-        //if (!permissionToRecordAccepted) finish();
-    }
-
-
-    public  boolean isRecordAudioPermissionGranted() {
-        if (Build.VERSION.SDK_INT >= 23) {
-            if (checkSelfPermission(Manifest.permission.RECORD_AUDIO)
-                    == PackageManager.PERMISSION_GRANTED) {
-                //Log.v(TAG,"Permission is granted2");
-                return true;
-            } else {
-                isPermissionChecking = true;
-                //Log.v(TAG,"Permission is revoked2");
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO}, 200);
-                return false;
-            }
-        }
-        else { //permission is automatically granted on sdk<23 upon installation
-            //Log.v(TAG,"Permission is granted2");
-            return true;
-        }
-    }
-
-    public  boolean isReadStoragePermissionGranted() {
-        if (Build.VERSION.SDK_INT >= 23) {
-            if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
-                    == PackageManager.PERMISSION_GRANTED) {
-                //Log.v(TAG,"Permission is granted1");
-                return true;
-            } else {
-                isPermissionChecking = true;
-
-                //Log.v(TAG,"Permission is revoked1");
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 3);
-                return false;
-            }
-        }
-        else { //permission is automatically granted on sdk<23 upon installation
-            //Log.v(TAG,"Permission is granted1");
-            return true;
-        }
-    }
-
-    public  boolean isWriteStoragePermissionGranted() {
-        if (Build.VERSION.SDK_INT >= 23) {
-            if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                    == PackageManager.PERMISSION_GRANTED) {
-                //Log.v(TAG,"Permission is granted2");
-                return true;
-            } else {
-                isPermissionChecking = true;
-
-                //Log.v(TAG,"Permission is revoked2");
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2);
-                return false;
-            }
-        }
-        else { //permission is automatically granted on sdk<23 upon installation
-            //Log.v(TAG,"Permission is granted2");
-            return true;
-        }
-    }
-*/
 
     public static boolean hasPermissions(Context context, String... permissions) {
         if (context != null && permissions != null) {
@@ -169,7 +91,7 @@ public class AudioRecordTest extends AppCompatActivity {
         recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
         recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
         //TODO: проверка на пустоту
-        String mFileName = Environment.getExternalStorageDirectory().getAbsolutePath() + "/";
+        String mFileName = AudioRecordTest.this.getCacheDir() + "/";
         mFileName += fileName.getText();
         mFileName += ".3gp";
         curFileName = mFileName;
