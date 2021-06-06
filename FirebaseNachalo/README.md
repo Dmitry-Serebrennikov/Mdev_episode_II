@@ -3,4 +3,4 @@
 ![Result_1](https://github.com/Dmitry-Serebrennikov/Mdev_episode_II/blob/master/FirebaseNachalo/2.jpg)
 ![Result_2](https://github.com/Dmitry-Serebrennikov/Mdev_episode_II/blob/master/FirebaseNachalo/3.jpg)
 ![Result_fb](https://github.com/Dmitry-Serebrennikov/Mdev_episode_II/blob/master/FirebaseNachalo/fb.png)
-<img src="https://github.com/Dmitry-Serebrennikov/Mdev_episode_II/blob/master/FirebaseNachalo/1.jpg" width="1000" />
+<img src="https://github.com/Dmitry-Serebrennikov/Mdev_episode_II/blob/master/FirebaseNachalo/1.jpg" width="300" />
