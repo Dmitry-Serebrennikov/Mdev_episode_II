@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "999468519398",
+    "project_id": "fbnachalo",
+    "storage_bucket": "fbnachalo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:999468519398:android:421970ed83911dd6ffd027",
+        "android_client_info": {
+          "package_name": "com.example.firebasedemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "999468519398-gg3s1dbov0ifqvummdoja2nmll7qgosa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKqu7qWWanH_5rmdAbo0cPp8Sa8t1kUTU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "999468519398-gg3s1dbov0ifqvummdoja2nmll7qgosa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
