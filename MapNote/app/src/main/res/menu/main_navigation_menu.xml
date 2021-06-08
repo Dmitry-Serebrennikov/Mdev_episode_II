@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/notesFragment"
+        android:icon="@drawable/edit"
+        android:title="Заметки"
+        />
+    <item
+        android:id="@+id/mapFragment"
+        android:icon="@drawable/maps"
+        android:title="Карта"
+        />
+</menu>

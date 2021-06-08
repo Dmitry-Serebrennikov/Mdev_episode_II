@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1058403855838",
+    "project_id": "mapnote-d4c07",
+    "storage_bucket": "mapnote-d4c07.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1058403855838:android:7c6c12a582536b760f014f",
+        "android_client_info": {
+          "package_name": "com.example.mapnote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1058403855838-1c7m2ab8ij3k518dpdqil1oi5ib0d2af.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZLB3xT09KXJ0n3haOARVmqCkfOfmvMao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1058403855838-1c7m2ab8ij3k518dpdqil1oi5ib0d2af.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
