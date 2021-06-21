@@ -2,12 +2,15 @@ package com.example.mapnote;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentContainerView;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -24,13 +27,12 @@ public class NoteActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     NavHostFragment hostFragment;
     NavController navController;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note);
 
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+
 
         auth = FirebaseAuth.getInstance();
 
@@ -41,6 +43,5 @@ public class NoteActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
     }
-
 
 }

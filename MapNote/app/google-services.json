@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "1058403855838",
-    "project_id": "mapnote-d4c07",
-    "storage_bucket": "mapnote-d4c07.appspot.com"
+    "project_number": "402778451811",
+    "firebase_url": "https://mapnote-7a1b1-default-rtdb.firebaseio.com",
+    "project_id": "mapnote-7a1b1",
+    "storage_bucket": "mapnote-7a1b1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1058403855838:android:7c6c12a582536b760f014f",
+        "mobilesdk_app_id": "1:402778451811:android:1fb36ccf0497de1979ad56",
         "android_client_info": {
           "package_name": "com.example.mapnote"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1058403855838-1c7m2ab8ij3k518dpdqil1oi5ib0d2af.apps.googleusercontent.com",
+          "client_id": "402778451811-1e7rm9g3e49cvkl5ej4188o93hal2mlb.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCZLB3xT09KXJ0n3haOARVmqCkfOfmvMao"
+          "current_key": "AIzaSyAbq0C9aVjJKY6GDSvh1qvFBVrZy5TWOew"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1058403855838-1c7m2ab8ij3k518dpdqil1oi5ib0d2af.apps.googleusercontent.com",
+              "client_id": "402778451811-1e7rm9g3e49cvkl5ej4188o93hal2mlb.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

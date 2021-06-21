@@ -1,8 +1,9 @@
-package com.example.mapnote.notefragments;
+  package com.example.mapnote.notefragments;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,12 +15,13 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ItemViewHolder> {
+public class    NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ItemViewHolder> {
 
     public List<Note> notes;
 
     public interface ItemClickListener{
         void onItemClick(int position);
+        void onPlayClick(int position);
     }
 
     public ItemClickListener itemClickListener = null;
@@ -42,6 +44,18 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ItemViewHold
         holder.titleTV.setText(notes.get(position).getTitle());
         holder.noteDescriptionTV.setText(notes.get(position).getDescription());
 
+        if (notes.get(position).isHasSoud()){
+            holder.playBTN.setVisibility(View.VISIBLE);
+            holder.playBTN.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    itemClickListener.onPlayClick(position);
+                }
+            });
+        }else{
+            holder.playBTN.setVisibility(View.GONE);
+        }
+
         if (itemClickListener != null){
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -58,14 +72,17 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ItemViewHold
         return notes.size();
     }
 
+
     class ItemViewHolder extends RecyclerView.ViewHolder {
 
-        TextView  titleTV,noteDescriptionTV;
+        TextView titleTV,noteDescriptionTV;
+        Button playBTN;
 
         public ItemViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
             titleTV = itemView.findViewById(R.id.titleTV);
             noteDescriptionTV = itemView.findViewById(R.id.noteDescritpionTV);
+            playBTN = itemView.findViewById(R.id.playRecordingBTN);
         }
     }
 

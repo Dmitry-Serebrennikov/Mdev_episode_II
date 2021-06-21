@@ -6,6 +6,15 @@ public class Note {
 
     boolean hasSound = false;
 
+    boolean isLoadedSound = true;
+
+    public void setIsLoadedSound(boolean isLoaded){
+        isLoadedSound = isLoaded;
+    }
+    public boolean getIsLoadedSound(){
+        return isLoadedSound;
+    }
+
     public Note(String title, String desctiption){
 
         this.title = title;
@@ -45,4 +54,7 @@ public class Note {
         return soundPath;
     }
 
+    public void setHasSound(boolean has){
+        hasSound = has;
+    }
 }
